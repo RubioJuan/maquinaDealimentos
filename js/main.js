@@ -63,7 +63,7 @@ if (producto){
 
 
 
-//             }
+//         hola    }
 //         }
 //         alert("Monedas de vuelto: " + monedasEntregadas(""));
 //     } else if (montoIngresado === precioProducto) {
