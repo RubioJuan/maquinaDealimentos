@@ -11,22 +11,22 @@
     
 // }
 
-var productos ={
+let productos ={
     "A": 270,
     "B": 340,
     "C": 390
 };
-var monedas = {
+let monedas = {
     "10":10,
     "50":50,
     "100":100
 };
-var producto = prompt("Elija un producto: A, B o C");
+let producto = prompt("Elija un producto: A, B o C");
 if (producto){
-    var precioProducto = productos[producto];
-    var montoIngresado = 0;
+    let precioProducto = productos[producto];
+    let montoIngresado = 0;
     while (montoIngresado < precioProducto){
-        var moneda = prompt("Ingrese una moneda: 10, 50, 100");
+        let moneda = prompt("Ingrese una moneda: 10, 50, 100");
         if (moneda){
             montoIngresado += monedas[moneda];
         }
@@ -34,9 +34,10 @@ if (producto){
             alert("Moneda invalida, por favor ingrese otra moneda");
         }
     }
+    // El codigo push añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
     if (montoIngresado > precioProducto){
-        var vuelto = montoIngresado - precioProducto;
-        var monedasRecibidas = []
+        let vuelto = montoIngresado - precioProducto;
+        let monedasRecibidas = []
         while (vuelto > 0){
             if (vuelto >= 100){
                 monedasRecibidas.push(100);
@@ -51,7 +52,8 @@ if (producto){
                 vuelto -= 10;
             }
         }
-        alert("Sus vueltos son " + monedasRecibidas.join(""));
+        //El codigo join, lo que se ponga en las comillas se proyecta, es la separacion de las palabras, en este caso son las monedas ingresadas
+        alert("Sus vueltos son " + monedasRecibidas.join(","));
     } 
     else if (montoIngresado === precioProducto){
         alert("Gracias por su compra, no hay vueltos, vuelva pronto...")
@@ -60,21 +62,6 @@ if (producto){
         alert("Que pena con usd veci, monto insuficiente, lastimosamente no se puede realizar la compra");
     }
 }
-
-
-//         }
-//         }
-//         alert("Monedas de vuelto: " + monedasEntregadas(""));
-//     } else if (montoIngresado === precioProducto) {
-//         alert("Gracias por su compra. No hay vuelto.");
-//     } else {
-//         alert("Lo siento, monto insuficiente. No se puede realizar la compra.");
-//     }
-// } else {
-//     alert("Producto no válido. Por favor, elija un producto válido.");
-// }
-
-
 
 // prompt()
 // let data = prompt("Ingrese el nombre")
