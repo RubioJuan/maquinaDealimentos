@@ -8,7 +8,6 @@
 //     alert("Tengo 3 tipos de productos, Categoria A = $270, B = $340 y C = $390")
 //     let data = prompt ("¿Cual desea?")
 //     alert("Vale, has seleccionado la opcion " + data)
-
     
 // }
 
@@ -32,29 +31,30 @@ if (producto){
             montoIngresado += monedas[moneda];
         }
         else{
-            alert("Moneda invalida, por favor ingrse otra moneda");
+            alert("Moneda invalida, por favor ingrese otra moneda");
         }
     }
     if (montoIngresado > precioProducto){
         var vuelto = montoIngresado - precioProducto;
+        var monedasRecibidas = []
         while (vuelto > 0){
             if (vuelto >= 100){
-                monedasRecibidas(100);
-                vuelto = 100;
+                monedasRecibidas.push(100);
+                vuelto -= 100;
             }
             else if (vuelto >= 50){
-                monedasRecibidas(50);
-                vuelto = 50;
+                monedasRecibidas.push(50);
+                vuelto -= 50;
             }
             else if (vuelto >= 10){
-                monedasRecibidas(10);
-                vuelto = 10;
+                monedasRecibidas.push(10);
+                vuelto -= 10;
             }
         }
-        alert("Vueltos " + monedasRecibidas (""));
+        alert("Sus vueltos son " + monedasRecibidas.join(""));
     } 
     else if (montoIngresado === precioProducto){
-        alert("Gracias pro su compra, no hay vueltos, vuelva pronto...")
+        alert("Gracias por su compra, no hay vueltos, vuelva pronto...")
     } 
     else {
         alert("Que pena con usd veci, monto insuficiente, lastimosamente no se puede realizar la compra");
@@ -62,8 +62,7 @@ if (producto){
 }
 
 
-
-//         hola    }
+//         }
 //         }
 //         alert("Monedas de vuelto: " + monedasEntregadas(""));
 //     } else if (montoIngresado === precioProducto) {
